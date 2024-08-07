@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508566735913",
+    "project_id": "khiat-590bc",
+    "storage_bucket": "khiat-590bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508566735913:android:ca47daa76ebf1918ace038",
+        "android_client_info": {
+          "package_name": "com.example.khiat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_s-iiTVwIA1vashKWmv2KlOEqx5_rGf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
