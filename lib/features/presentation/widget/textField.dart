@@ -31,7 +31,7 @@ class customInputField extends StatelessWidget {
           ),
           filled: true,
           hintText: hint,
-          prefixIcon: Icon(icon==null?Icons.circle:icon)
+          prefixIcon: Icon(icon ?? Icons.circle)
 
         ),
       ) ,

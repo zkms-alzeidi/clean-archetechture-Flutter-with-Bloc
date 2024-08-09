@@ -1,5 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:khiat/features/presentation/cubit/auth/auth_cubit.dart';
+import 'package:khiat/features/presentation/cubit/auth/auth_state.dart';
+import 'package:khiat/features/presentation/widget/log_button.dart';
+import 'package:khiat/routes/route_helper.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,12 +15,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        child: const Text("HomePage"),
+      body: BlocConsumer<AuthCubit,AuthState>(
+        builder: (BuildContext context, state) {
+          return Container(
+            alignment: Alignment.center,
+            child:  GestureDetector(onTap:()async=>{
+
+              BlocProvider.of<AuthCubit>(context).loggedOut(),
+
+
+              Get.offNamed(RouteHelper.getSignInPage())
+
+
+            },child: logButton(text: "sign out",)),
+          );
+        },
+        listener: (BuildContext context, Object? state) {
+
+        },
+
       ),
     );
   }

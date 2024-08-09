@@ -1,8 +1,7 @@
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:khiat/common.dart';
 import 'package:khiat/features/domain/entities/user_entity.dart';
 import 'package:khiat/features/presentation/cubit/auth/auth_cubit.dart';
@@ -13,6 +12,7 @@ import 'package:khiat/features/presentation/pages/main_page.dart';
 import 'package:khiat/features/presentation/widget/loading.dart';
 import 'package:khiat/features/presentation/widget/log_button.dart';
 import 'package:khiat/features/presentation/widget/textField.dart';
+import 'package:khiat/routes/route_helper.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -55,7 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
               builder: (context, authState) {
                 if (authState is Authenticated) {
                   print(" we are in Authenticated");
-                  return HomePage();
+                  return const HomePage();
                 } else {
                   print("Unauthenticsted");
                   return _signUpWidget();
@@ -74,9 +74,10 @@ class _SignUpPageState extends State<SignUpPage> {
  Widget  _signUpWidget(){
     return SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 22),
+          height: MediaQuery.of(context).size.height,
+          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 22),
           child: Column(
-
+            mainAxisAlignment: MainAxisAlignment.center,
               children:<Widget> [
 
                 Container(alignment: Alignment.centerLeft, child: const Text("Sign Up", style: TextStyle(color: Colors.green, fontSize: 35,fontWeight: FontWeight.bold),),),
@@ -94,10 +95,15 @@ class _SignUpPageState extends State<SignUpPage> {
 
                   _submitSignUp()
 
-                },child: logButton(text: "Sign Up"))
+                },child: logButton(text: "Sign Up")),
 
+                Row(children: [
+                  const Text("Have already an"),
+                  TextButton(onPressed: ()=>{
+                    Get.offNamed(RouteHelper.getSignInPage())
+                  }, child: const Text("account"))
 
-
+                ],)
               ]
           ),
         ));

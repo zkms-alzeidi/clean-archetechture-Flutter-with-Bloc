@@ -67,9 +67,8 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource{
   }
 
   @override
-  Future<void> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
+  Future<void> signOut()async {
+    await auth.signOut();
   }
 
   @override

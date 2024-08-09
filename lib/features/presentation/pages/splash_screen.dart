@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:khiat/features/presentation/cubit/auth/auth_cubit.dart';
 import 'package:khiat/firebase_options.dart';
 import 'package:khiat/routes/route_helper.dart';
 
@@ -24,7 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
       options: DefaultFirebaseOptions.currentPlatform,
     );
 
-    Timer(const Duration(seconds: 2), ()=> Get.offNamed(RouteHelper.getSignUpPage()));
+    bool isSignIn=false;
+    Timer( const Duration(seconds: 2), ()async{
+
+       isSignIn= await  BlocProvider.of<AuthCubit>(context).isSignInUseCase.call();
+      if(isSignIn){
+        Get.offNamed(RouteHelper.getInitial());
+      }
+      else{
+        Get.offNamed(RouteHelper.getSignInPage());
+      }
+
+
+
+    });
 
   }
 

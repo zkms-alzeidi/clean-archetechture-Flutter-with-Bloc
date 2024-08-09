@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Loading extends StatelessWidget {
@@ -7,11 +6,11 @@ class Loading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Container(
+    return const Center(
+        child: SizedBox(
           height: 100,
 
-          child:  const Column(
+          child:  Column(
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 5,),
