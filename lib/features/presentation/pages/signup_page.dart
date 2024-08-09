@@ -95,7 +95,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                   _submitSignUp()
 
-                },child: logButton(text: "Sign Up")),
+                },child: const LogButton(text: "Sign Up")),
 
                 Row(children: [
                   const Text("Have already an"),

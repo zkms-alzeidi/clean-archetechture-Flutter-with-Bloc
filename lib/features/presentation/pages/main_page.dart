@@ -16,14 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
-
-
 
     return Scaffold(
       body: BlocConsumer<AuthCubit,AuthState>(
@@ -38,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               Get.offNamed(RouteHelper.getSignInPage())
 
 
-            },child: logButton(text: "sign out",)),
+            },child: const LogButton(text: "sign out",)),
           );
         },
         listener: (BuildContext context, Object? state) {

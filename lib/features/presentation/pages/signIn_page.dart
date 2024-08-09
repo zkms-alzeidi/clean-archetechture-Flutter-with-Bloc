@@ -8,8 +8,8 @@ import 'package:khiat/features/presentation/cubit/auth/auth_state.dart';
 import 'package:khiat/features/presentation/cubit/credential/credential_cubit.dart';
 import 'package:khiat/features/presentation/cubit/credential/credential_state.dart';
 import 'package:khiat/features/presentation/pages/main_page.dart';
-import 'package:khiat/features/presentation/widget/loading.dart';
 import 'package:khiat/features/presentation/widget/log_button.dart';
+import 'package:khiat/features/presentation/widget/loading.dart';
 import 'package:khiat/features/presentation/widget/textField.dart';
 import 'package:khiat/routes/route_helper.dart';
 
@@ -93,7 +93,7 @@ class _SignInPageState extends State<SignInPage> {
 
                 _submitSignIn()
 
-              },child: logButton(text: "SignIn")),
+              },child: const LogButton(text: "SignIn")),
 
 
               Row(children: [
