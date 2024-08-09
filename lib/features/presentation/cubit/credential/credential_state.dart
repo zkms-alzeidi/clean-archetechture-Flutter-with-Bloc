@@ -23,9 +23,10 @@ class CredentialLoading extends CredentialState{
 }
 
 class CredentialSuccess extends CredentialState{
+
   @override
-  // TODO: implement props
   List<Object?> get props => [];
+
 
 }
 

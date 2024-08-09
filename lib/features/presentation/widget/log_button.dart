@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class logButton extends StatelessWidget {
 
-  String text;
-  Color color;
-  Color textColor;
+  String? text;
+  Color? color;
+  Color? textColor;
 
-   logButton({super.key, required this.text, this.color= Colors.blueGrey, this.textColor= Colors.black });
+   logButton({super.key, this.text, this.color= Colors.blueGrey, this.textColor= Colors.black });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class logButton extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(10)
       ),
-      child: Text(text, style: TextStyle(color: textColor),),
+      child: text!=null?Text(text!, style: TextStyle(color: textColor)):const CircularProgressIndicator(),
     );
   }
 }

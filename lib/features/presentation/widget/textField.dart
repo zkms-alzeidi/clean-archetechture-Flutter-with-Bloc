@@ -3,21 +3,24 @@ import 'package:flutter/material.dart';
 class customInputField extends StatelessWidget {
 
   final String hint;
-  final IconData icon;
+  final IconData? icon;
   final TextEditingController textController;
 
 
 
-  const customInputField({super.key, required this.hint, required this.icon, required this.textController });
+  const customInputField({super.key, required this.hint,  this.icon, required this.textController });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: const EdgeInsets.all(8),
-    child: Material(
+    return
+    Container(
+      height: 45,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.all(Radius.circular(10))
+      ),
 
-      elevation:3.5,
-      color: Colors.black,
-      shadowColor: Colors.transparent,
 
       child: TextField(
         textAlignVertical: TextAlignVertical.center,
@@ -28,9 +31,10 @@ class customInputField extends StatelessWidget {
           ),
           filled: true,
           hintText: hint,
+          prefixIcon: Icon(icon==null?Icons.circle:icon)
 
         ),
       ) ,
-    ),);
+    );
   }
 }

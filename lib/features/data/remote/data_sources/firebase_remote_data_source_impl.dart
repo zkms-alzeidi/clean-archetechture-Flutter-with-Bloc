@@ -59,9 +59,11 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource{
   }
 
   @override
-  Future<void> signIn(UserEntity user) {
-    // TODO: implement signIn
-    throw UnimplementedError();
+  Future<void> signIn(UserEntity user) async {
+    print("is working");
+     await auth.signInWithEmailAndPassword(email: user.email, password: user.password);
+
+
   }
 
   @override
@@ -71,9 +73,10 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource{
   }
 
   @override
-  Future<void> signUp(UserEntity user) {
-    // TODO: implement signUp
-    throw UnimplementedError();
+  Future<void> signUp(UserEntity user) async {
+    print("is working");
+    await auth.createUserWithEmailAndPassword(email: user.email, password: user.password);
+
   }
   
 }

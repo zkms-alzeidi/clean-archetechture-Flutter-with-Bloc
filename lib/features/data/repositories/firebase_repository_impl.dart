@@ -20,11 +20,13 @@ class FirebaseRepositoryImpl implements FirebaseRepository{
 
   @override
   Future<bool> isSignIn() async {
+
     return await firebaseRemoteDataSource.isSignIn();
   }
 
   @override
   Future<void> signIn(UserEntity user) async{
+    print("worked in firebase");
     return await firebaseRemoteDataSource.signIn(user);
   }
 
@@ -35,8 +37,8 @@ class FirebaseRepositoryImpl implements FirebaseRepository{
 
   @override
   Future<void> signUp(UserEntity user) async{
-
-    return await signUp(user);
+    print("worked in firebase");
+    return await firebaseRemoteDataSource.signUp(user);
   }
 
 

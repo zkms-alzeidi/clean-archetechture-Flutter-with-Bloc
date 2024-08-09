@@ -12,6 +12,7 @@ class SignUpUseCase{
 
   Future<void> call(UserEntity user) async{
 
+
     return await repository.signUp(user);
 
   }

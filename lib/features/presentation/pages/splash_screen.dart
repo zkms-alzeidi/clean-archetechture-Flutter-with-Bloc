@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       options: DefaultFirebaseOptions.currentPlatform,
     );
 
-    Timer(const Duration(seconds: 2), ()=> Get.offNamed(RouteHelper.getSignInPage()));
+    Timer(const Duration(seconds: 2), ()=> Get.offNamed(RouteHelper.getSignUpPage()));
 
   }
 
@@ -34,8 +34,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
         body: Container(
           alignment: Alignment.center,
-          child: const Text("SplashScreen"),
+          child: const Text("splash screen"),
         ),
       );
   }
+
+
 }
+
