@@ -1,4 +1,4 @@
-# khiat
+# Clean Architecture Flutter with Bloc
 
 A new Flutter project.
 
